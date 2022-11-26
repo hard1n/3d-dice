@@ -1,0 +1,146 @@
+*, ::after, ::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #2d3436;
+}
+
+.main-container {
+    border: 1px solid white;
+    height: 80vh;
+    position: absolute;
+    top: 50%;
+
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    padding: 50px;
+    height: 500px;
+
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 100%;
+}
+
+/* .main-section{
+    border: 1px solid white;
+
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    padding: 50px;
+    height: 500px;
+} */
+
+.left-side {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 10px;
+}
+
+.right-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+}
+
+.main-dice-container {
+    /* border: 1px solid #fff; */
+    display: flex;
+    justify-content: center;
+    /* height: 80%; */
+    width: 100%;
+}
+
+.nav-footer {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 15%;
+    width: 400px;
+}
+
+/*** Dice styles ***/
+.dice-face {
+    border: 1px solid #fff;
+    border-radius: 5%;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.main-dice {
+    border: 1px solid #fff;
+    border-radius: 12px;
+    height: 300px;
+    width: 300px;
+}
+
+.dice-btn {
+    border-radius: 12px;
+    height: 100px;
+    width: 100px;
+}
+
+.dice-hover {
+    border: 1px solid #fff;
+    border-radius: 6px;
+    height: 50px;
+    width: 50px;
+}
+
+.dot {
+    background-color: #fff;
+    border-radius: 50%;
+    height: 30%;
+    width: 30%;
+}
+
+.face1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.face2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.face2 > .dot2 {
+    align-self: flex-end;
+}
+
+.face3 {
+}
+
+.face3 > .dot2 {
+    align-self: center;
+}
+
+.face3 > .dot3 {
+    align-self: flex-end;
+}
+
+.face4 {
+    
+}
+
+.face5 {
+    
+}
+
+.face6 {
+    
+}
