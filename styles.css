@@ -1,3 +1,8 @@
+:root {
+    --btn-dice: 100px;
+    --hover-dice: 50px;
+}
+
 *, ::after, ::before {
     box-sizing: border-box;
     margin: 0;
@@ -75,6 +80,7 @@ body {
     border: 1px solid #fff;
     border-radius: 5%;
     padding: 5px;
+    position: relative;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -88,6 +94,7 @@ body {
 }
 
 .dice-btn {
+    border: 1px solid #fff;
     border-radius: 12px;
     height: 100px;
     width: 100px;
@@ -105,6 +112,13 @@ body {
     border-radius: 50%;
     height: 30%;
     width: 30%;
+}
+
+.dot-hover {
+    background-color: #fff;
+    border-radius: 50%;
+    height: 14.29px;
+    width: 14.29;
 }
 
 .face1 {
@@ -133,14 +147,56 @@ body {
     align-self: flex-end;
 }
 
-.face4 {
-    
+.face4, .face5, .face6 {
+    display: grid;
+    grid-template-columns: 50% 50%;
 }
 
-.face5 {
-    
+.face4 > .dot, .face5 > .dot {
+    height: 60%;
+    width: 60%;
 }
 
-.face6 {
-    
+.face4 > .dot2, .face5 > .dot3 {
+    justify-self: flex-end;
+}
+
+.face4 > .dot3, .face5 > .dot4 {
+    align-self: flex-end;
+}
+
+.face4 > .dot4, .face5 > .dot5 {
+    align-self: flex-end;
+    justify-self: flex-end;
+}
+
+/* .face5 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+} */
+
+.face5 > .dot2 {
+    position: absolute;
+    top: calc(50% - (26.94% / 2));
+    left: calc(50% - (26.94% / 2));
+    height: 26.94%;
+    width: 26.94%;
+}
+
+.face6 > .dot {
+    height: 90%;
+    width: 60%;
+}
+
+
+.face6 > .dot2, .face6 > .dot4, .face6 > .dot6 {
+    justify-self: flex-end;
+}
+
+.face6 > .dot3, .face6 > .dot4 {
+    align-self: center;
+}
+
+.face6 > .dot5, .face6 > .dot6 {
+    align-self: flex-end;
 }
