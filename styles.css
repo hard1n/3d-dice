@@ -1,6 +1,4 @@
 :root {
-    --btn-dice: 100px;
-    --hover-dice: 50px;
 }
 
 *, ::after, ::before {
@@ -75,7 +73,7 @@ body {
     width: 400px;
 }
 
-/*** Dice styles ***/
+/*** Dice faces ***/
 .dice-face {
     border: 1px solid #fff;
     border-radius: 5%;
@@ -94,6 +92,7 @@ body {
 }
 
 .dice-btn {
+    background-color: #2d3436;
     border: 1px solid #fff;
     border-radius: 12px;
     height: 100px;
@@ -103,6 +102,7 @@ body {
 .dice-hover {
     border: 1px solid #fff;
     border-radius: 6px;
+    transition: 300ms;
     height: 50px;
     width: 50px;
 }
@@ -114,29 +114,13 @@ body {
     width: 30%;
 }
 
-.dot-hover {
-    background-color: #fff;
-    border-radius: 50%;
-    height: 14.29px;
-    width: 14.29;
-}
-
 .face1 {
-    display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.face2 {
-    display: flex;
-    justify-content: space-between;
-}
-
 .face2 > .dot2 {
     align-self: flex-end;
-}
-
-.face3 {
 }
 
 .face3 > .dot2 {
@@ -170,11 +154,6 @@ body {
     justify-self: flex-end;
 }
 
-/* .face5 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-} */
-
 .face5 > .dot2 {
     position: absolute;
     top: calc(50% - (26.94% / 2));
@@ -199,4 +178,87 @@ body {
 
 .face6 > .dot5, .face6 > .dot6 {
     align-self: flex-end;
+}
+
+/*** Buttons styles ***/
+.dice-btn:hover, .dice-hover:hover {
+    box-shadow: 0 1px 6px #fff;
+    cursor: pointer;
+}
+
+/* ***3D animation*** */
+.main-dice-container {
+    position: relative;
+    transform: rotate(-50%, -50%);
+    perspective: 2000px;
+}
+
+.main-dice__box {
+    background-color: #fff;
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    /* transform: rotate(-90deg); */
+    transform-style: preserve-3d;
+    transition: 700ms;
+    /* animation: animate 5s infinite; */
+    /* transform:rotateY(30deg); */
+    /* transform:rotateX(-10deg); */
+}
+
+/* @keyframes animate {
+    0% {
+        transform: rotatex(45deg) rotateY(-45deg);
+    }
+    25% {
+        transform: rotatex(-45deg) rotateY(-45deg);
+    }
+    50% {
+        transform: rotatex(45deg) rotateY(-45deg);
+    }
+    75% {
+        transform: rotatex(-45deg) rotateY(45deg);
+    }
+    100% {
+        transform: rotatex(45deg) rotateY(-45deg);
+    }
+} */
+
+.main-dice {
+    background-color: #2d3436;
+    position: absolute;
+}
+
+#dice-1 /*front face*/{
+    /* display: none; */
+    transform: translateZ(150px);
+}
+
+#dice-2 /*right*/ {
+    /* display: none; */
+    left: 150px;
+    transform: rotateY(-90deg);
+}
+
+#dice-3 /*left*/{
+    /* display: none; */
+    right: 150px;
+    transform: rotateY(-90deg);
+}
+
+#dice-4 /*bottom*/{
+    /* display: none; */
+    top: 150px;
+    transform: rotateX(-90deg);
+}
+
+#dice-5 /*top*/{
+    /* display: none; */
+    bottom: 150px;
+    transform: rotateX(-90deg);
+}
+
+#dice-6 /*back*/{
+    /* display: none; */
+    transform: translateZ(-150px);
 }
