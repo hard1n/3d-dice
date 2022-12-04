@@ -12,7 +12,7 @@ body {
 }
 
 .main-container {
-    border: 1px solid white;
+    /* border: 1px solid white; */
     height: 80vh;
     position: absolute;
     top: 50%;
@@ -21,10 +21,11 @@ body {
     justify-content: space-around;
     align-content: center;
     padding: 50px;
-    height: 500px;
+    height: 450px;
 
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
+    /* max-width: 950px; */
     width: 100%;
 }
 
@@ -69,7 +70,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    height: 15%;
+    padding: 5px 0;
+    /* height: 15%; */
     width: 400px;
 }
 
@@ -85,16 +87,20 @@ body {
 }
 
 .main-dice {
-    border: 1px solid #fff;
-    border-radius: 12px;
-    height: 300px;
-    width: 300px;
+    background-color: #2d3436;
+    border: 2px solid #636e72;
+    border-radius: 0;    
+    box-shadow: 0 1px 6px #000;
+    position: absolute;
+    height: 250px;
+    width: 250px;
 }
 
 .dice-btn {
     background-color: #2d3436;
     border: 1px solid #fff;
     border-radius: 12px;
+    transition: 300ms;
     height: 100px;
     width: 100px;
 }
@@ -186,6 +192,11 @@ body {
     cursor: pointer;
 }
 
+.dice-btn:active {
+    opacity: 70%;
+    /* transform: scale(0.9); */
+}
+
 /* ***3D animation*** */
 .main-dice-container {
     position: relative;
@@ -194,16 +205,20 @@ body {
 }
 
 .main-dice__box {
-    background-color: #fff;
+    background-color: #2d3436;
     position: absolute;
-    height: 300px;
-    width: 300px;
-    /* transform: rotate(-90deg); */
+    height: 250px;
+    width: 250px;
     transform-style: preserve-3d;
     transition: 700ms;
+    /* transform: rotate(-90deg); */
     /* animation: animate 5s infinite; */
     /* transform:rotateY(30deg); */
     /* transform:rotateX(-10deg); */
+}
+
+.main-dice__box::before {
+    background-color: #fff;
 }
 
 /* @keyframes animate {
@@ -224,41 +239,36 @@ body {
     }
 } */
 
-.main-dice {
-    background-color: #2d3436;
-    position: absolute;
-}
-
 #dice-1 /*front face*/{
     /* display: none; */
-    transform: translateZ(150px);
+    transform: translateZ(125px);
 }
 
 #dice-2 /*right*/ {
     /* display: none; */
-    left: 150px;
+    left: 125px;
     transform: rotateY(-90deg);
 }
 
 #dice-3 /*left*/{
     /* display: none; */
-    right: 150px;
+    right: 125px;
     transform: rotateY(-90deg);
 }
 
 #dice-4 /*bottom*/{
     /* display: none; */
-    top: 150px;
+    top: 125px;
     transform: rotateX(-90deg);
 }
 
 #dice-5 /*top*/{
     /* display: none; */
-    bottom: 150px;
+    bottom: 125px;
     transform: rotateX(-90deg);
 }
 
 #dice-6 /*back*/{
     /* display: none; */
-    transform: translateZ(-150px);
+    transform: translateZ(-125px);
 }
